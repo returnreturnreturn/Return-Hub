@@ -1,10 +1,12 @@
-local scriptsList = {
-    [277751860] = "https://raw.githubusercontent.com/returnreturnreturn/Return-Hub/refs/heads/main/Epic%20Minigames",
-}
+local placeId = game.PlaceId
 
-local script = scriptsList[game.PlaceId]
-if script then
-    loadstring(game:HttpGet(script))()
+local base =
+	"https://raw.githubusercontent.com/returnreturnreturn/Return-Hub/refs/heads/main/Games/"
+
+local get = game:HttpGet(string.format('%s%s', base, placeId))
+
+if get then
+	loadstring(get)()
 else
-    print("not supported")
+	print("not supported") -- load a unsupported gui script some time later.
 end
