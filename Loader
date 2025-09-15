@@ -2,7 +2,8 @@ local scriptsList = {
     [277751860] = "https://raw.githubusercontent.com/returnreturnreturn/Return-Hub/refs/heads/main/Epic%20Minigames",
 }
 
-if scriptsList[game.PlaceId] then
+local script = scriptsList[game.PlaceId]
+if script then
     loadstring(game:HttpGet(script))()
 else
     print("not supported")
